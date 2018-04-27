@@ -28,7 +28,9 @@ public class Curso{
 		@OneToMany
 		private List<Disciplina> disciplina;
 		
-		
+		public Curso() {
+			// TODO Auto-generated constructor stub
+		}
 		
 		public Curso(Integer id, String nome) {
 			super();

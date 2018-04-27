@@ -42,6 +42,14 @@ public class Escola {
 	
 	}
 
+	public Escola(String nome) {
+		this.nome = nome;
+	}
+	
+	public Escola() {
+
+	}
+
 	public Integer getId() {
 		return id;
 	}
