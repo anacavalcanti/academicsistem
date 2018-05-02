@@ -20,10 +20,14 @@ public class Boletim {
 	@OneToMany
 	private  List<Notas>notas;
 
-	public Boletim(Integer id, List<Notas> notas) {
+	public Boletim(Integer id, int i) {
 		super();
 		this.id = id;
-		this.notas = notas;
+		this.notas = i;
+	}
+
+	public Boletim(int id2, int i) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getId() {

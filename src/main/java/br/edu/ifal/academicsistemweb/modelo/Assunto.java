@@ -18,6 +18,16 @@ public class Assunto {
 	private String nome;
 	
 	
+	
+	
+	public Assunto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Assunto(String nome) {
+		super();
+		this.nome = nome;
+	}
 	public int getid() {
 		return id;
 	}
