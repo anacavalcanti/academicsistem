@@ -20,7 +20,7 @@ public class Boletim {
 	@OneToMany
 	private  List<Notas>notas;
 
-	public Boletim(Integer id, int i) {
+	public Boletim(Integer id, List<Notas> i) {
 		super();
 		this.id = id;
 		this.notas = i;
