@@ -19,7 +19,10 @@ public class AssuntoResources {
 
 	@RequestMapping (value="carregar", method=RequestMethod.GET)
 	public String init() {
-		Assunto e = new Assunto(poo)
+		Assunto assunto = new Assunto("poo");
+		
+		assuntoRepositorio.save(assunto);
+		return "ok";
 		
 	}
 }

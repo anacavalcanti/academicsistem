@@ -18,9 +18,9 @@ public class DisciplinaResources {
 
 	@RequestMapping (value="carregar", method=RequestMethod.GET)
 	public String init() {
-		Disciplina e = new Disciplina("IFAL-RL");
+		Disciplina D = new Disciplina();
 		
-		disciplinaRepositorio.save(e);
+		disciplinaRepositorio.save(D);
 		return "ok";
 	}
 }

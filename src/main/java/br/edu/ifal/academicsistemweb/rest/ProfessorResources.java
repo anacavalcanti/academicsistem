@@ -19,9 +19,8 @@ public class ProfessorResources {
 
 	@RequestMapping (value="carregar", method=RequestMethod.GET)
 	public String init() {
-		Professor e = new Professor(1, priscylla, superior, 111.111.111.11);
+		Professor e = new Professor(1, "Fulano", "Superior", "11111111", null);
 		
-		CrudRepository<Professor, Integer> professorRepositorio;
 		professorRepositorio.save(e);
 		return "ok";
 	}

@@ -1,28 +1,45 @@
 package br.edu.ifal.academicsistemweb.rest;
 
-	
-	import org.springframework.beans.factory.annotation.Autowired;
-	import org.springframework.web.bind.annotation.RequestMapping;
-	import org.springframework.web.bind.annotation.RequestMethod;
-	import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
-	import br.edu.ifal.academicsistemweb.modelo.Aluno;
-import br.edu.ifal.academicsistemweb.modelo.TipoAluno;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.edu.ifal.academicsistemweb.modelo.Aluno;
 import br.edu.ifal.academicsistemweb.repositorio.AlunoRepositorio;
 
+@RestController
+@RequestMapping("/api/aluno")
+public class AlunoResources {
 
-	@RestController
-	@RequestMapping("/aluno")
-	public class AlunoResources {
-		
-		@Autowired
-		AlunoRepositorio alunoRepositorio;
+	@Autowired
+	private AlunoRepositorio alunoRepositorio;
 
-		@RequestMapping (value="carregar", method=RequestMethod.GET)
-		public String init() {
-			Aluno e = new Aluno(Integer.valueOf(1), 1234, "Maria", "RUa Marechal", TipoAluno.Sembolsa, null);
-			
-			alunoRepositorio.save(e);
-			return "ok";
-		}
+	@GetMapping("/iniciar")
+	public String iniciar() {
+
+		return "";
+
 	}
+
+	@GetMapping("/{id}")
+	public Aluno buscar(@PathVariable Integer id) {
+		Aluno a = alunoRepositorio.findById(id).get();
+
+		return a;
+	}
+
+	@GetMapping("/listar")
+	public List<Aluno> listar() {
+		return alunoRepositorio.findAll();
+	}
+
+	@GetMapping("/deletar/{id}")
+	public void deletar(@PathVariable Integer id) {
+		alunoRepositorio.deleteById(id);
+	}
+
+}
