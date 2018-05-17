@@ -57,4 +57,9 @@ public class Professor extends Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+	public void add(Professor professor) {
+		// TODO Auto-generated method stub
+		
+	}
 }

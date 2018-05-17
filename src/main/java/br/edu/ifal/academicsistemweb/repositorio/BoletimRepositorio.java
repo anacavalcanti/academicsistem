@@ -10,8 +10,9 @@ import br.edu.ifal.academicsistemweb.modelo.Disciplina;
 import br.edu.ifal.academicsistemweb.modelo.Notas;
 
 public interface BoletimRepositorio extends JpaRepository<Boletim, Integer> {
-	List<Boletim> findByNomeContaining(String nome);
+	
+	List<Boletim> findAll();
 
-	List<Notas> getNotas(Aluno aluno, Disciplina disciplina);
+	//List<Notas> getNotas(Aluno aluno, Disciplina disciplina);
 	
 }

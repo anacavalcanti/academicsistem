@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifal.academicsistemweb.modelo.Aluno;
@@ -41,5 +43,15 @@ public class AlunoResources {
 	public void deletar(@PathVariable Integer id) {
 		alunoRepositorio.deleteById(id);
 	}
+	
+	@RequestMapping(value = "/salvar", method=RequestMethod.POST)
+	public Aluno salvar(@RequestBody Aluno aluno) {
+		alunoRepositorio.save(aluno);
+		return aluno;
+	}
+	
+	
+	
+
 
 }

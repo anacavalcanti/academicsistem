@@ -48,8 +48,8 @@ public abstract class Pessoa {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
-		endereco = endereco;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 }

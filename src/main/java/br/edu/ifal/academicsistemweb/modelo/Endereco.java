@@ -20,16 +20,20 @@ public class Endereco {
 	private Integer ncasa;
 	
 	public Endereco() {
-		
+		super();
 	}
-	public void Endrecos(String rua,String bairro, String cidade,Integer ncasa) {
 	
+	public Endereco(String rua, String bairro, String cidade, Integer ncasa) {
+		super();
 		this.rua = rua;
 		this.bairro = bairro;
 		this.cidade = cidade;
 		this.ncasa = ncasa;
 	}
-	
+
+
+
+
 	public String getrua() {
 		return rua;
 	}

@@ -30,13 +30,14 @@ public class BoletimResources {
 	@Autowired
 	DisciplinaRepositorio disciplinaRepositorio;
 	
+	/*
 	@RequestMapping(value="{alunoId}/notas")
 	public List<Notas> notasAluno(
 			@PathVariable("alunoId") Integer alunoId, 
 			@RequestParam(value="disciplinaId",defaultValue="0") Integer disciplinaId){
 		
 		Aluno aluno = alunoRepositorio.getOne(alunoId);
-		
+	
 		if(disciplinaId==0)
 			return boletimRepositorio.getNotas(aluno, null);
 		else {
@@ -45,6 +46,6 @@ public class BoletimResources {
 			return boletimRepositorio.getNotas(aluno, disciplina);
 		}
 			
-	}
+	}*/
 	
 }

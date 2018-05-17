@@ -19,13 +19,13 @@ public class Disciplina {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 
 	@Column
 	private String nome;
 
 	@ManyToOne
-	private Professor Professor;
+	private Professor professor;
 
 	@ManyToMany
 	private List<Aluno> alunos;
@@ -35,11 +35,11 @@ public class Disciplina {
 
 	
 
-	public Disciplina(Integer id, String nome, Professor professor, List<Aluno> alunos, Set<Assunto> assuntos) {
+	public Disciplina(Long id, String nome, Professor professor, List<Aluno> alunos, Set<Assunto> assuntos) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.Professor = professor;
+		this.professor = professor;
 		this.alunos = alunos;
 		this.assuntos = assuntos;
 	}
@@ -49,12 +49,12 @@ public class Disciplina {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(int i) {
+		this.id = (long) i;
 	}
 
 	public String getNome() {
@@ -66,12 +66,12 @@ public class Disciplina {
 	}
 
 	public Professor getProfessor() {
-		return Professor;
+		return professor;
+	}
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 
-	public void setProfessor(Professor professor) {
-		Professor = professor;
-	}
 
 	public Set<Assunto> getAssuntos() {
 		return assuntos;

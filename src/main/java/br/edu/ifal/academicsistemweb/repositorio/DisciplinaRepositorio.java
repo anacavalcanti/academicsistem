@@ -9,8 +9,9 @@ import org.springframework.data.repository.query.Param;
 import br.edu.ifal.academicsistemweb.modelo.Disciplina;
 
 public interface DisciplinaRepositorio extends JpaRepository<Disciplina, Integer>{
-	List<Disciplina> findByPeriodo(Integer periodo);
 	
-	@Query("SELECT Nome FROM Disciplina WHERE periodo = :pPeriodo")
-	public List<String> findNomePeriodo(@Param("pPeriodo") Integer periodo);
+	List<Disciplina> findAll();
+	
+	//@Query("SELECT Nome FROM Disciplina WHERE periodo = :pPeriodo")
+	//public List<String> findNomePeriodo(@Param("pPeriodo") Integer periodo);
 }

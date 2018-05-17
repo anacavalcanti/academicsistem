@@ -18,7 +18,7 @@ public class Boletim {
 	private Integer id;
 	
 	@OneToMany
-	private  List<Notas>notas;
+	private  List<Notas> notas;
 
 	public Boletim(Integer id, List<Notas> i) {
 		super();
