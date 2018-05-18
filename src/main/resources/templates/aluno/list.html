@@ -36,7 +36,16 @@
 						        <td th:text="${a.nome}"></td>
 						        <td th:text="${a.idade}"></td>
 						        <td th:text="${a.matricula}"></td>
-						        <td></td>
+						        <td>
+						       <a href="aluno/form.html" th:href="@{'/aluno/edit-'+${a.id}+'-aluno'}">
+						        		edit
+						        	</a>
+						        	
+						        	<a href="aluno/list.html"   th:href="@{/aluno/delete(alunoId=${a.id})}" >
+						        		delete
+						        	</a>
+						        
+						        </td>
 					      	</tr>
 					    </tbody>
 				  	</table>
