@@ -15,12 +15,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.edu.ifal.academicsistemweb.modelo.Aluno;
 import br.edu.ifal.academicsistemweb.repositorio.AlunoRepositorio;
+import br.edu.ifal.academicsistemweb.repositorio.DisciplinaRepositorio;
+
 
 
 @Controller
 @RequestMapping("/aluno")
 public class AlunoController {
-
+	
+	
+	@Autowired
+	DisciplinaRepositorio DisciplinaRepositorio;
+	
+	
 	@Autowired
 	AlunoRepositorio alunoRepository;
 	
