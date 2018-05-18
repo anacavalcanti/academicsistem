@@ -58,7 +58,7 @@ public class CursoResouceTeste {
 
 	@Test
 	public void deveFuncionarAListagemDeTodosOsCursos() throws JsonParseException, JsonMappingException, IOException {
-		String response = restTemplate.getForObject(BASE_PATH + "/listar/todos",String.class);
+		String response = restTemplate.getForObject(BASE_PATH + "/listar",String.class);
 		
 		List<Curso>  cursos = MAPPER.readValue(response,
 				MAPPER.getTypeFactory().constructCollectionLikeType(List.class, Curso.class));
