@@ -1,7 +1,6 @@
 package br.edu.ifal.academicsistemweb.modelo;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.*;
 
@@ -21,29 +20,28 @@ public class Notas {
 
 	@Column
 	private double valor;
+	
+	public Notas() {
+		super();
+		
+	}
 
-	@ElementCollection
-	private List<String> Notas = new ArrayList<>();
-
-	public Notas(long i, Aluno aluno2, Disciplina disciplina, double valor) {
+	public Notas(long i, Aluno aluno, Disciplina disciplina, double valor) {
 		super();
 		this.id = i;
-		this.aluno = (Aluno) aluno2;
+		this.aluno = aluno;
 		this.disciplina = disciplina;
 		this.valor = valor;
 	}
 
-	public Notas() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(int i) {
-		this.id = (long) i;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Aluno getAluno() {
@@ -70,17 +68,6 @@ public class Notas {
 		this.valor = valor;
 	}
 
-	@ElementCollection
-	@CollectionTable(name = "notas", joinColumns = @JoinColumn(name = "cod_nota"))
-	@Column(name = "notas", length = 20, nullable = false)
-
-	public List<String> getNotas() {
-		return Notas;
-	}
-
-	public void setNotas(List<String> notas) {
-		this.Notas = notas;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -105,6 +92,11 @@ public class Notas {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Nota [id=" + id + ", aluno=" + aluno + ", disciplina=" + disciplina + ", valor=" + valor + "]";
+	}
+
 
 }
 
