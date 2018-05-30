@@ -10,8 +10,8 @@ import br.edu.ifal.academicsistemweb.modelo.Disciplina;
 
 public interface DisciplinaRepositorio extends JpaRepository<Disciplina, Integer>{
 	
-	List<Disciplina> findAll();
+	List<Disciplina> findByNome(String nome);
+
 	
-	//@Query("SELECT Nome FROM Disciplina WHERE periodo = :pPeriodo")
-	//public List<String> findNomePeriodo(@Param("pPeriodo") Integer periodo);
+	
 }
