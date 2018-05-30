@@ -31,7 +31,7 @@ public class CursoResources {
 	
 	@GetMapping("/pesquisar")
 	public List<Curso> pesquisar(@RequestParam("nome")String nome){
-		List<Curso> cursos = cursoRepositorio.findByNomeContaining(nome);
+		List<Curso> cursos = cursoRepositorio.findByNome(nome);
 			return cursos;
 	}
 	
