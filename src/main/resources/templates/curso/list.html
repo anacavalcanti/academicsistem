@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link th:href="@{/css/style.css}" rel="stylesheet" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		<title>Lista de Cursos</title>
+	</head>
+	<body>
+		<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Sistema academico</a>
+  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Curso
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="curso/form.html" th:href="@{/curso/new}">Cadastrar</a>
+          <a class="dropdown-item" href="curso/list.html" th:href="@{/curso/list}">Buscar</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Disciplina
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="disciplina/form.html" th:href="@{/disciplina/new}">Cadastrar</a>
+          <a class="dropdown-item" href="disciplina/list.html" th:href="@{/disciplina/list}">Buscar</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Professor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="professor/form.html" th:href="@{/professor/new}">Cadastrar</a>
+          <a class="dropdown-item" href="professor/list.html" th:href="@{/professor/list}">Buscar</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Aluno
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="aluno/form.html" th:href="@{/aluno/new}">Cadastrar</a>
+          <a class="dropdown-item" href="aluno/list.html" th:href="@{/aluno/list}">Buscar</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+	</header>
+		<div class="container">
+			<div class="row">
+			 
+			 	<div class="col-md-12">
+	    
+				 	<h2 th:text="${message}"></h2>
+				  
+				  	<table class="table" th:unless="${#lists.isEmpty(cursoList)}">
+				    	<thead>
+					      	<tr>
+					      		<th>#</th>
+					      		<th>Id</th>
+						        <th>Nome</th>
+					            <th>Ação</th>
+					      	</tr>
+				    	</thead>
+					    <tbody>
+					    	<tr th:each="c,status : ${cursoList}">
+					    		<td th:text="${status.count}"></td>
+						        <td th:text="${c.id}"></td>
+						        <td th:text="${c.nome}"></td>
+						        <td>
+						        	<a class="btn btn-primary" href="curso/form.html" th:href="@{'/curso/edit-'+${c.id}+'-curso'}">
+						        	<i class="fas fa-pen-square" id="icone1"></i>
+						        	</a>
+						        	
+						        	<a class="btn btn-danger" href="curso/list.html"   th:href="@{'/curso/delete-'+${c.id}+'-curso'}">
+						        	<i class="fas fa-trash-alt" id="icone1"></i>
+						        	</a>
+						        </td>
+					      	</tr>
+					    </tbody>
+				  	</table>
+			  	</div>
+			</div>
+		</div>
+	</body>
+</html>

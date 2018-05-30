@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link th:href="@{/css/style.css}" rel="stylesheet" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		<title>Formulário Nota</title>
+	</head>
+	<body>
+		<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="#">Sistema Academico</a>
+		</nav>
+	</header>
+		<div class="container">
+		<form action="#" th:action="@{/nota/save}" th:object="${nota}" method="POST">	
+			<div class="row">
+			
+				<div class="col-md-12">
+					<h4>Nota</h4>
+					<hr>
+				</div>
+		
+				<div class="col-md-12">
+				
+					<div class="form-row">
+						  <div class="form-group col-md-12">
+						      <label for="id" th:text="Id"></label>
+						      <input type="text" class="form-control" id="id" th:field="*{id}" readonly="readonly">
+						    </div>
+						  </div>
+						  <div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="aluno" th:text="Aluno"></label>
+								<select class="form-control" th:field="*{aluno}" readonly="readonly">
+		        					<option th:each="a : ${aluno}"
+		               					 th:value="${a.id}"
+		                				 th:text="${a.nome}" />
+		    					</select>
+    						</div>
+    					</div>
+						  
+						  <div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="disciplina" th:text="Disciplinas"></label>
+								<select class="form-control" th:field="*{disciplina}">
+		        					<option th:each="d : ${listDisciplinas}"
+		               					 th:value="${d.id}"
+		                				 th:text="${d.nome}" />
+		    					</select>
+    						</div>
+    					</div>
+    					<div class="form-row">
+						  	<div class="form-group col-md-12">
+						      <label for="valor" th:text="Nota"></label>
+						      <input type="text" class="form-control" id="valor" th:field="*{valor}">
+						    </div>
+						  </div>	
+				</div>
+
+			</div>
+			
+			
+			<div class="row">
+			
+			
+				<div class="col-md-12">
+					<h1 th:text="${mensagem}"></h1>
+					    <input type="submit" value="Enviar" class="btn btn-success"/>
+ 						<input type="reset" value="Cancelar" class="btn btn-danger"/>
+ 						
+				</div>
+				
+				
+			</div>
+			</form>	
+		</div>			
+	</body>
+</html>
