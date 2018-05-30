@@ -19,7 +19,7 @@ public class AcademicsistemWebApplicationTests {
 	@Test
 	public void contextLoads() {
 	
-		Curso c = new Curso(1, "Informatica");
+		Curso c = new Curso(1, "Informatica", null, null);
 		
 		cursoRepository.save(c);
 		

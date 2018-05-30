@@ -44,7 +44,7 @@ public class GeradorDeNotasTeste {
 		professor.setTipoProfessor(TipoProfessor.Efetivo);
 		
 		
-		kely.setId(1);
+		kely.setId((long) 1);
 		kely.setMatricula("2018-2");
 		kely.setNome("Kely");
 		kely.setEndereco(new Endereco("Rua x","Bairro Y", "Cidade z", 1));
@@ -71,7 +71,7 @@ public class GeradorDeNotasTeste {
 	}
 	
 	private boolean setarNotas(Notas nota2) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 

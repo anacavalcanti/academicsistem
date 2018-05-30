@@ -103,7 +103,7 @@ public class AlunoResouceTest {
 				MAPPER.getTypeFactory().constructCollectionLikeType(List.class, Aluno.class));
 	
 		//assertEquals(4, alunos.size());
-		assertEquals("Keila", alunos.get(0).getNome());
+		assertEquals("Keila", alunos.get(3).getNome());
 	
 	}
 }

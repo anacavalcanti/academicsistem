@@ -41,22 +41,22 @@ public class RelatorioTeste {
 		this.relatorio = new Relatorio();
 		
 		Aluno ze = new Aluno();
-		ze.setId(1);;
+		ze.setId(1l);;
 		ze.setNome("Zé");
 		ze.setMatricula("123");
 		
 		Aluno ana = new Aluno();
-		ana.setId(2);;
+		ana.setId(2l);;
 		ana.setNome("Ana");
 		ana.setMatricula("254");
 		
 		Aluno joao = new Aluno();
-		joao.setId(3);;
+		joao.setId(3l);;
 		joao.setNome("João");
 		joao.setMatricula("222");
 		
 		Aluno piu = new Aluno();
-		piu.setId(4);
+		piu.setId(4l);
 		piu.setNome("Priscylla");
 		piu.setMatricula("851");
 		
